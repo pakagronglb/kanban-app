@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="board">
+      <div class="column" id="todo-column">
+        <h2>To Do</h2>
+        <div class="card-container" id="todo-cards"></div>
+        <button class="add-card-btn" id="add-todo-card">+ Add Card</button>
+      </div>
+      <div class="column" id="in-progress-column">
+        <h2>In Progress</h2>
+        <div class="card-container" id="in-progress-cards"></div>
+        <button class="add-card-btn" id="add-in-progress-card">
+          + Add Card
+        </button>
+      </div>
+      <div class="column" id="done-column">
+        <h2>Done</h2>
+        <div class="card-container" id="done-cards"></div>
+        <button class="add-card-btn" id="add-done-card">+ Add Card</button>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <div class="card" draggable="true">
+        <input type="text" class="card-title" placeholder="Title" />
+        <textarea class="card-description" placeholder="Description"></textarea>
+        <select class="card-tag">
+          <option value="project">Project</option>
+          <option value="issue">Issue</option>
+          <option value="task">Task</option>
+        </select>
+        <button class="create-small-card-btn">Create Card</button>
+        <button class="delete-card-btn">Delete</button>
+      </div>
+    </template>
+
+    <template id="small-card-template">
+      <div class="small-card" draggable="true">
+        <h3 class="small-card-title"></h3>
+        <p class="small-card-description"></p>
+        <span class="small-card-tag"></span>
+        <button class="delete-small-card-btn">Delete</button>
+      </div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
